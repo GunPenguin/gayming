@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-interface IProduct{
+
+public interface IProduct{
     [SerializeField]
     int buyPrice {get;}
     [SerializeField]
