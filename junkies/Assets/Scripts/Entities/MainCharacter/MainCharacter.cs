@@ -14,6 +14,7 @@ public class MainCharacter : MonoBehaviour, IMainCharacter
     public void AddMoney(int money){
         Cash += money;
         OnMoneyAdd(money);
+
     }
 
     public void TakeMoney(int money){
