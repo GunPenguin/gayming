@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-interface IDrug : IProduct {
+public interface IDrug : IProduct {
     [SerializeField]
     int sellPrice {get;}
 }

@@ -2,4 +2,4 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-interface IGoods : IProduct {}
+public interface IGoods : IProduct {}
