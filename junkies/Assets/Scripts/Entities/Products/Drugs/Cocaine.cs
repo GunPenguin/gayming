@@ -8,5 +8,4 @@ public class Cocaine : MonoBehaviour, IDrug
     public int buyPrice {get;} = 30;
     public string productName {get;} = "Cocaine";
     public string description {get;} = "High-end white drug";
-    
 }

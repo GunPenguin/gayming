@@ -9,6 +9,7 @@ namespace Assets.Scripts.Entities
     public enum MessageType
     {
         Greeting = 0,
+        Cop,
         Purchase,
         Thanks,
         Rofl,
