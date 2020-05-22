@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IProduct{
     [SerializeField]
-    int buyPrice {get;}
+    int sellPrice {get;}
     [SerializeField]
     string productName {get;}
     [SerializeField]

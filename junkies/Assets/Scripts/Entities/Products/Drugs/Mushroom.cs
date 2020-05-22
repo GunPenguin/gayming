@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mushroom : MonoBehaviour, IDrug
+public class Mushroom : IDrug
 {
     public int sellPrice {get;} = 90;
     public int buyPrice {get;} = 50;

@@ -16,23 +16,32 @@ public class Cop : ClientCharacter
         Type = CharacterType.Cop;
     }
 
-    private Dictionary<MessageType, string> GetMessages()
+    private Dictionary<string, string> GetMessages()
     {
-        var messages = new Dictionary<MessageType, string>();
+        var messages = new Dictionary<string, string>();
 
-        var greetings = MessagesStorage.GetGreetingMessages();
-        var copMessages = MessagesStorage.GetCopMessages();
-        var purchaseMessages = MessagesStorage.GetPurchaseMessages(DesiredProduct);
+        var greetings = CopMessages.GetHelloMessages();
+        var buys = CopMessages.GetBuyMessages();
+        var randoms = CopMessages.GetRandomMessages();
+        var correct = CopMessages.GetCorrectMessages();
+        var idles = CopMessages.GetIdleMessages();
 
         int randomMessageNumber = Random.Range(0, greetings.Count);
-        messages.Add(MessageType.Greeting, greetings.ElementAt(randomMessageNumber));
+        messages.Add("greeting", greetings.ElementAt(randomMessageNumber));
 
-        randomMessageNumber = Random.Range(0, copMessages.Count);
-        messages.Add(MessageType.Cop, copMessages.ElementAt(randomMessageNumber));
+        randomMessageNumber = Random.Range(0, buys.Count);
+        messages.Add("buy", buys.ElementAt(randomMessageNumber) + DesiredProduct);
 
-        randomMessageNumber = Random.Range(0, purchaseMessages.Count);
-        messages.Add(MessageType.Purchase, purchaseMessages.ElementAt(randomMessageNumber));
+        randomMessageNumber = Random.Range(0, randoms.Count);
+        messages.Add("random", randoms.ElementAt(randomMessageNumber));
+        
+        randomMessageNumber = Random.Range(0, idles.Count);
+        messages.Add("idle", idles.ElementAt(randomMessageNumber));
 
+        randomMessageNumber = Random.Range(0, correct.Count);
+        messages.Add("correct", correct.ElementAt(randomMessageNumber));
+        messages.Add("shocked", correct.ElementAt(randomMessageNumber));
+        messages.Add("angry", "Hmm, so you're clear");
         return messages;
     }
 }

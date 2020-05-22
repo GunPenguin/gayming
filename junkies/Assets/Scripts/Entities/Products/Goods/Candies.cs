@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Candies : MonoBehaviour, IGoods
+public class Candies : IGoods
 {
     [SerializeField]
-    public int buyPrice {get;} = 4;
+    public int sellPrice {get;} = 4;
     [SerializeField]
     public string productName {get;} = "Candy";
     [SerializeField]

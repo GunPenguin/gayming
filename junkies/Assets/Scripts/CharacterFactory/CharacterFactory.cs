@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class CharacterFactory : ICharacterFactory
 {
-    private const string pathToFaceParts = @"Assets\Sprites\FaceParts";
+    private const string pathToFaceParts = @"Assets/Sprites/FaceParts";
     public IClientCharacter CreateCop(IFace face, IDrug drug)
     {
         
@@ -113,7 +113,7 @@ public class CharacterFactory : ICharacterFactory
 
     private byte[] GetRandomFaceImageDataFromDir(bool isGirl, bool isYoung)
     {
-        string path = string.Concat(pathToFaceParts, @"\Faces");
+        string path = string.Concat(pathToFaceParts, @"/Faces");
         string searchFilter = string.Empty;
         searchFilter += isGirl ? "Girl" : "Man"; 
         searchFilter += isYoung ? "Y" : "O";
@@ -137,7 +137,7 @@ public class CharacterFactory : ICharacterFactory
     private byte[] GetRandomHairImageDataFromDir(bool isGirl)
     {
         Debug.Log(isGirl);
-        string path = string.Concat(pathToFaceParts, @"\Hairs");
+        string path = string.Concat(pathToFaceParts, @"/Hairs");
         string searchFilter = string.Empty;
         searchFilter += isGirl ? "Girl" : "Man";
         Debug.Log("search: " + searchFilter);
@@ -160,7 +160,7 @@ public class CharacterFactory : ICharacterFactory
 
     private byte[] GetRandomEyesImageDataFromDir()
     {
-        string path = string.Concat(pathToFaceParts, @"\Eyes");
+        string path = string.Concat(pathToFaceParts, @"/Eyes");
         ICollection<string> filePathes =
             Directory
             .GetFiles(path)
@@ -179,7 +179,7 @@ public class CharacterFactory : ICharacterFactory
 
     private byte[] GetRandomMouthImageDataFromDir()
     {
-        string path = string.Concat(pathToFaceParts, @"\Mouthes");
+        string path = string.Concat(pathToFaceParts, @"/Mouthes");
         ICollection<string> filePathes =
             Directory
             .GetFiles(path)
@@ -198,7 +198,7 @@ public class CharacterFactory : ICharacterFactory
 
     private byte[] GetRandomNoseImageDataFromDir()
     {
-        string path = string.Concat(pathToFaceParts, @"\Noses");
+        string path = string.Concat(pathToFaceParts, @"/Noses");
         ICollection<string> filePathes =
             Directory
             .GetFiles(path)

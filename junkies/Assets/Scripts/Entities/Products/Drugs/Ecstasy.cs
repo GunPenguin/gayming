@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Ecstasy : MonoBehaviour, IDrug
+public class Ecstasy : IDrug
 {
     public int sellPrice {get;} = 25;
     public int buyPrice {get;} = 15;

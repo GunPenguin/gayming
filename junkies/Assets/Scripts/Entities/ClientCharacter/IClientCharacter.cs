@@ -8,6 +8,7 @@ public interface IClientCharacter
 {
     IFace Face{ get; set; }
     IProduct DesiredProduct { get; set; }
-    IDictionary<MessageType, string> Messages { get; set; }
+    IDictionary<string, string> Messages { get; set; }
     CharacterType Type { get; }
+    void Update();
 }

@@ -16,23 +16,37 @@ public class GoodsBuyer : ClientCharacter
         Type = CharacterType.GoodsBuyer;
     }
 
-    private Dictionary<MessageType, string> GetMessages()
+    private Dictionary<string, string> GetMessages()
     {
-        var messages = new Dictionary<MessageType, string>();
+        var messages = new Dictionary<string, string>();
 
-        var greetings = MessagesStorage.GetGreetingMessages();
-        var purchaseMessages = MessagesStorage.GetPurchaseMessages(DesiredProduct);
-        var thanksMessages = MessagesStorage.GetThanksMessages();
+        var greetings = CustomerMessage.GetHelloMessages();
+        var buys = CustomerMessage.GetBuyMessages();
+        var randoms = CustomerMessage.GetRandomMessages();
+        var correct = CustomerMessage.GetCorrectMessages();
+        var idles = CustomerMessage.GetIdleMessages();
+        var angry = CustomerMessage.GetAngryMessages();
+        var shocked = CustomerMessage.GetShockedMessages();
+        int randomMessageNumber = Random.Range(0, greetings.Count);
+        messages.Add("greeting", greetings.ElementAt(randomMessageNumber));
 
-        int randomMessageNumber = Random.Range(0, greetings.Count - 1);
-        messages.Add(MessageType.Greeting, greetings.ElementAt(randomMessageNumber));
+        randomMessageNumber = Random.Range(0, buys.Count);
+        messages.Add("buy", buys.ElementAt(randomMessageNumber) + DesiredProduct);
+        if (Random.Range(0, 10) > 7){
+            randomMessageNumber = Random.Range(0, randoms.Count);
+            messages.Add("random", randoms.ElementAt(randomMessageNumber));
+        }
+        randomMessageNumber = Random.Range(0, correct.Count);
+        messages.Add("correct", correct.ElementAt(randomMessageNumber));
+        
+        randomMessageNumber = Random.Range(0, idles.Count);
+        messages.Add("idle", idles.ElementAt(randomMessageNumber));
 
-        randomMessageNumber = Random.Range(0, purchaseMessages.Count - 1);
-        messages.Add(MessageType.Purchase, purchaseMessages.ElementAt(randomMessageNumber));
+        randomMessageNumber = Random.Range(0, angry.Count);
+        messages.Add("angry", angry.ElementAt(randomMessageNumber));
 
-        randomMessageNumber = Random.Range(0, thanksMessages.Count - 1);
-        messages.Add(MessageType.Thanks, thanksMessages.ElementAt(randomMessageNumber));
-
+        randomMessageNumber = Random.Range(0, shocked.Count);
+        messages.Add("shocked", shocked.ElementAt(randomMessageNumber));
         return messages;
     }
 }

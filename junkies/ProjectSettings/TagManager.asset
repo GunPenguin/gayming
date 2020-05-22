@@ -44,3 +44,6 @@ TagManager:
   - name: Face
     uniqueID: 2756526739
     locked: 0
+  - name: Kiosk
+    uniqueID: 513445411
+    locked: 0

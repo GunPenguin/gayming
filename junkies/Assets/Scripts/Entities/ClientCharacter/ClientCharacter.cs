@@ -8,6 +8,7 @@ public abstract class ClientCharacter : IClientCharacter
 {
     public IFace Face { get; set; }
     public IProduct DesiredProduct { get; set; }
-    public IDictionary<MessageType, string> Messages { get; set; }
+    public IDictionary<string, string> Messages { get; set; }
     public CharacterType Type { get; protected set; }
+    public void Update(){}
 }

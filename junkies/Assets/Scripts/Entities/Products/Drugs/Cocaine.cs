@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cocaine : MonoBehaviour, IDrug
+public class Cocaine : IDrug
 {
     public int sellPrice {get;} = 50;
     public int buyPrice {get;} = 30;

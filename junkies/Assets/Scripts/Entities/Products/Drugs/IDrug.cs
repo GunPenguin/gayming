@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IDrug : IProduct {
     [SerializeField]
-    int sellPrice {get;}
+    int buyPrice {get;}
 }
